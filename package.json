@@ -1,8 +1,11 @@
 {
-  "name": "app",
+  "name": "sci-viz",
   "version": "0.2.0",
   "private": true,
   "homepage": ".",
+  "main": "index.js",
+  "author": "DataJoint",
+  "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
@@ -42,6 +45,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-pkg": "rm -rf dist && tsc && cp package.json README.md ./dist",
     "test": "jest",
     "eject": "react-scripts eject"
   },
