@@ -138,6 +138,8 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build dist
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
         run: yarn rollup -c
       - name: Copy package.json
         run: cp ./package.json ./dist
