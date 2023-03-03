@@ -135,6 +135,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Check versions
+        run: |
+          node -v
+          yarn -v
       - name: Install dependencies
         run: yarn install
       - name: Build dist
