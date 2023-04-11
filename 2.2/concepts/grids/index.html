@@ -480,11 +480,13 @@
 <h2 id="fixed-grid">Fixed grid<a class="headerlink" href="#fixed-grid" title="Permanent link">&para;</a></h2>
 <p>A fixed grid object requires all components to explicitly give their position and size on the grid. It consists of five keys:</p>
 <ul>
-<li><code>Grid_Name</code> - A user-defined key for the name of the grid
-    - <code>type</code> - Indicates the type of grid, in this case <code>type: fixed</code>
-    - <code>columns</code> - The number of columns that the grid will have
-    - <code>row_height</code> - The height of each row in pixels
-    - <code>components</code> - A dictionary of component objects. View the <a href="../components/">Components</a> section for more information</li>
+<li><code>Grid_Name</code> - A user-defined key for the name of the grid<ul>
+<li><code>type</code> - Indicates the type of grid, in this case <code>type: fixed</code></li>
+<li><code>columns</code> - The number of columns that the grid will have</li>
+<li><code>row_height</code> - The height of each row in pixels</li>
+<li><code>components</code> - A dictionary of component objects. View the <a href="../components/">Components</a> section for more information</li>
+</ul>
+</li>
 </ul>
 <h2 id="dynamic-grid">Dynamic grid<a class="headerlink" href="#dynamic-grid" title="Permanent link">&para;</a></h2>
 <p>A dynamic grid object takes a datajoint query and then uses each record and applies that record as a restriction to a template of components. It then spawns a single or group of components for each record of that parent query but the components query is restricted by the entire record that has been passed in from the parent query.</p>
@@ -497,15 +499,17 @@
 </ul>
 <p>A dynamic grid object consists of nine keys:</p>
 <ul>
-<li><code>Grid_Name</code> - A user-defined key for the name of the grid
-    - <code>type</code> - Indicates the type of grid, in this case <code>type: dynamic</code>
-    - <code>columns</code> - The number of columns that the grid will have
-    - <code>row_height</code> - The height of each row in pixels
-    - <code>route</code> - The backend api route for the parent query
-    - <code>component_templates</code> - A dictionary of component objects that serve as a template. Currently only the <code>metadata</code> and <code>plot</code> components are supported in dynamic mode
-    - <code>restriction</code> - A restriction for the datajoint query
-    - <code>dj_query</code> - The parent datajoint query that will provide the restriction records
-    - <code>channels?</code> - A list of emitter components to be channeled with</li>
+<li><code>Grid_Name</code> - A user-defined key for the name of the grid<ul>
+<li><code>type</code> - Indicates the type of grid, in this case <code>type: dynamic</code></li>
+<li><code>columns</code> - The number of columns that the grid will have</li>
+<li><code>row_height</code> - The height of each row in pixels</li>
+<li><code>route</code> - The backend api route for the parent query</li>
+<li><code>component_templates</code> - A dictionary of component objects that serve as a template. Currently only the <code>metadata</code> and <code>plot</code> components are supported in dynamic mode</li>
+<li><code>restriction</code> - A restriction for the datajoint query</li>
+<li><code>dj_query</code> - The parent datajoint query that will provide the restriction records</li>
+<li><code>channels?</code> - A list of emitter components to be channeled with</li>
+</ul>
+</li>
 </ul>
 <p>Additionally any components in the dynamic grid do not need <code>x</code>, <code>y</code> , <code>height</code>, and <code>width</code> fields.</p>
 
